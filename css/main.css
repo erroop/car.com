@@ -1,0 +1,50 @@
+/* ========================== MAIN_BANNER */
+#main_banner{position:relative;margin:auto;height:100vh}
+
+/* tit */
+#main_banner .tit{position:absolute;z-index:2;top:40%;left:50%;transform:translateX(-50%);width:100%;text-align:center;font-size:82px;font-weight:500}
+
+/* main_slide*/
+#main_banner .main_slide{position:relative;top:60%;width:100%;height:100%}
+#main_banner li{position:relative}
+#main_banner li img{display:block;margin:auto;width:80%;height:100%;object-fit:cover;border-radius:100px;filter:brightness(0.9)}
+#main_banner .pager{position:absolute;z-index:1;left:3%;bottom:7%;width:auto;background:none}
+#main_banner .pager .swiper-pagination-bullet{opacity:1;padding:0 5px;margin:0 7px;width:auto;height:auto;border-radius:0px;font-size:22px;font-family:"Montserrat";color:rgb(255, 255, 255, 0.7);background:none}
+#main_banner .pager .swiper-pagination-bullet-active{border-bottom:2px solid #e1e1e1}
+#main_banner .scroll_down{position:absolute;z-index:1;bottom:-10%;left:50%;transform:translateX(-50%);padding:10px;border-radius:50%;background-color:var(--primary)} 
+#main_banner .scroll_down .scroll img{animation:scroll_down 10s infinite linear}
+#main_banner .scroll_down:after{content:"";position:absolute;z-index:1;top:28%;left:50%;width:16px;height:23px;transform:translate(-50%, -50%);animation:scroll_icon 2.2s infinite linear;background:url(../img/main/down.png)}
+@keyframes scroll_down {0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)}}
+@keyframes scroll_icon {0%{top:28%;opacity:1} 50%{top:40%;opacity:0} 51%{top:28%;opacity:1} 100%{top:40%;opacity:0}}
+
+/* ========================== inc01 */
+#inc01{padding:140px 0;background-color:#212123}
+
+/* tit 공통 */
+#inc01 .tit{display:flex;flex-direction:column;justify-content:space-between;padding:48px;width:25%}
+#inc01 .tit .en{font-size:16px;font-weight:700}
+#inc01 .tit p{margin-top:15px;font-size:24px;font-weight:700}
+#inc01 .tit .pl{margin-top:30px;font-size:15px;font-weight:500}
+#inc01 .tit a{display:flex;align-items:center;width:50%;font-size:18px;font-weight:700;color:#fff}
+
+/* inc01 main_slide */
+#inc01 .inc01_slide{position:relative;margin:auto;width:90%;height:370px}
+#inc01 .inc01_slide li{display:flex;width:100%}
+#inc01 .inc01_slide li .tit{color:#fff;background-color:var(--primary)}
+#inc01 .inc01_slide li img{width:75%;object-fit:cover}
+#inc01 .inc01_slide .nav_container{display:flex;gap:20px;position:absolute;z-index:1;bottom:45px;left:328px;cursor:pointer}
+#inc01 .inc01_slide .nav_container svg{color:#fff}
+
+/* inc01 latest_slide*/
+#inc01 .inc01_latest{display:flex;position:relative;margin:auto;width:90%;height:435px}
+#inc01 .inc01_latest .tit{background-color:#fff}
+#inc01 .inc01_latest .tit a{color:#000}
+#inc01 .inc01_news{width:75%}
+#inc01 .inc01_news li{height:100%;background-color:#f6f6f6}
+#inc01 .inc01_news li .news_tit{padding:25px;height:50%}
+#inc01 .inc01_news li .news_tit .date{display:flex;flex-direction:column;font-size:17px}
+#inc01 .inc01_news li .news_tit .date span{font-size:25px;font-weight:700}
+#inc01 .inc01_news li .news_tit p{margin-top:60px;font-size:18px;font-weight:700}
+#inc01 .inc01_news li .news_tit .cate{margin-top:10px;font-size:14px;font-weight:500}
+#inc01 .inc01_news li img{width:100%;height:50%;object-fit:cover}
+#inc01 .inc01_latest .nav_container{display:flex;gap:20px;position:absolute;z-index:1;bottom:45px;left:328px;cursor:pointer}

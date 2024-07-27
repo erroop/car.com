@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <!-- 반응형 [s] -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="imagetoolbar" content="no">
+    <!-- 반응형 [e] -->
+    <meta name="naver-site-verification" content=""/><!-- 네이버 소유확인 -->
+    <meta name="description" content=""><!-- 사이트 설명문구 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sample">
+    <meta property="og:description" content=""><!-- 사이트 설명문구 -->
+    <meta property="og:image" content="img/common/logo.png">
+    <meta property="og:url" content="">
+    <title>Sample</title>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/topmenu.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+</head>
+<body>
+    <header>
+        <div id="hd" data-aos="fade-down"data-aos-duration="1000">
+            <div id="hd_bg"></div>
+            <div id="hd_wrapper">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/common/logo_m.png" alt="logo">
+                    </a>
+                </div>
+                <nav class="nav_wrapper">
+                    <ul class="nav_container">
+                        <li class="nav_list">
+                            <a class="link" href="sub.html">Company</a>
+                            <ul class="hidden_nav">
+                                <li><a href="sub.html">회사소개</a></li>
+                                <li><a href="">소분류</a></li>
+                                <li><a href="">소분류</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav_list">
+                            <a class="link" href="">Business</a>
+                            <ul class="hidden_nav">
+                                <li><a href="">소분류</a></li>
+                                <li><a href="">소분류</a></li>
+                                <li><a href="">소분류</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav_list">
+                            <a class="link" href="">Product</a>
+                            <ul class="hidden_nav">
+                                <li><a href="">소분류</a></li>
+                                <li><a href="">소분류</a></li>
+                                <li><a href="">소분류</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav_list">
+                            <a class="link" href="">Community</a>
+                            <ul class="hidden_nav">
+                                <li><a href="">소분류</a></li>
+                                <li><a href="">소분류</a></li>
+                                <li><a href="">소분류</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="main_wrapper">
+            <!-- MainVisual [s] -->
+            <div id="main_banner">
+                <div class="tit" data-aos="fade-blur" data-aos-duration="1600"  data-aos-delay="600">Tow, that new beginning</div>
+                <div class="swiper-container main_slide" data-aos="fade-up" data-aos-duration="800"  data-aos-delay="1200">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <img src="img/main/main_banner_01.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="img/main/main_banner_02.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="img/main/main_banner_03.jpg" alt="">
+                        </li>
+                    </ul>
+                    <div class="pager"></div>
+                </div>
+                <div class="scroll_down">
+                    <span class="scroll"><img src="img/main/scroll_down.png" alt="scroll_down_rotate"></span>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function(){
+                    var main_slide = new Swiper(".main_slide", {
+                        loop:true,
+                        speed:1300,
+                        slidesPerView: '1',
+                        effect:"fade",
+                        slideActiveClass: 'on',
+                        pagination:{
+                            el:".pager",
+                            clickable: true,
+                            renderBullet: function (index, className) {
+                                return '<span class="' + className + '">' + (index + 1) + "</span>";
+                            },
+                        }
+                    });
+                    gsap.registerPlugin(ScrollTrigger);
+                    setTimeout(()=>{
+                        gsap.to("#main_banner .swiper-slide img", {
+                        scrollTrigger:{
+                            pin:true,
+                            trigger:"#main_banner",
+                            start: "top top",
+                            end: "+=900",
+                            scrub: 1
+                        },
+                        width:'100%',
+                        borderRadius:'0px'
+                    })
+                    gsap.to("#main_banner .main_slide", {
+                        scrollTrigger:{
+                            trigger:"#main_banner",
+                            start: "top top",
+                            end: "+=900",
+                            scrub: 1,
+                        },
+                        top:'0%'
+                    });
+                    gsap.to("#main_banner .tit", {
+                        scrollTrigger:{
+                            trigger:"#main_banner",
+                            start: "top top",
+                            end: "+=900",
+                            scrub: 1,
+                        },
+                        top:'50%',
+                        transform:'translate(-50%, -50%)',
+                        color:'#fff'
+                    });
+                    }, 3000)
+                })
+            </script>
+            <!-- MainVisual [e] -->
+            <!-- Section [s] -->
+            <section id="section">
+                <section id="inc01">
+                    <div class="swiper-container inc01_slide" data-aos="fade-down" data-aos-delay="1500" data-aos-duration="1100">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <div class="tit">
+                                    <div>
+                                        <div class="en">영문제목이 들어가는 곳입니다.</div>
+                                        <p>제목이 들어가는 곳입니다</p>
+                                        <div class="pl">해당 슬라이드에 맞는 내용,
+                                            및 설명이 들어가는 곳입니다.</div>
+                                    </div>
+                                    <a href="index.html">더보기 <i data-feather="chevron-right"></i></a>
+                                </div>
+                                <img src="img/main/inc01/img01.jpg" alt="img01">
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="tit">
+                                    <div>
+                                        <div class="en">영문제목이 들어가는 곳입니다.</div>
+                                        <p>제목이 들어가는 곳입니다</p>
+                                        <div class="pl">해당 슬라이드에 맞는 내용,
+                                            및 설명이 들어가는 곳입니다.</div>
+                                    </div>
+                                    <a href="index.html">더보기 <i data-feather="chevron-right"></i></a>
+                                </div>
+                                <img src="img/main/inc01/img02.jpg" alt="img02">
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="tit">
+                                    <div>
+                                        <div class="en">영문제목이 들어가는 곳입니다.</div>
+                                        <p>제목이 들어가는 곳입니다</p>
+                                        <div class="pl">해당 슬라이드에 맞는 내용,
+                                            및 설명이 들어가는 곳입니다.</div>
+                                    </div>
+                                    <a href="index.html">더보기 <i data-feather="chevron-right"></i></a>
+                                </div>
+                                <img src="img/main/inc01/img03.jpg" alt="img03">
+                            </li>
+                        </ul>
+                        <div class="nav_container">
+                            <div class="prev_nav"><i data-feather="chevron-left"></i></div>
+                            <div class="next_nav"><i data-feather="chevron-right"></i></div>
+                        </div>
+                    </div>
+                    <div class="inc01_latest">
+                        <div class="tit" data-aos="fade-right" data-aos-delay="1500" data-aos-duration="900">
+                            <div>
+                                <div class="en">영문제목이 들어가는 곳입니다.</div>
+                                <p>제목이 들어가는 곳입니다</p>
+                                <div class="pl">해당 슬라이드에 맞는 내용,
+                                    및 설명이 들어가는 곳입니다.</div>
+                            </div>
+                            <a href="index.html">더보기 <i data-feather="chevron-right"></i></a>
+                        </div>
+                        <div class="swiper-container inc01_news" data-aos="fade-left" data-aos-delay="1500" data-aos-duration="900">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <div class="news_tit">
+                                        <div class="date">2024.07 <span>05</span> </div>
+                                        <p>뉴스제목이 들어가는 곳입니다.</p>
+                                        <div class="cate">카테고리</div>
+                                    </div>
+                                    <img src="img/main/inc01/img04.jpg" alt="img04">
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="news_tit">
+                                        <div class="date">2024.07 <span>05</span> </div>
+                                        <p>뉴스제목이 들어가는 곳입니다.</p>
+                                        <div class="cate">카테고리</div>
+                                    </div>
+                                    <img src="img/main/inc01/img05.jpg" alt="img05">
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="news_tit">
+                                        <div class="date">2024.07 <span>05</span> </div>
+                                        <p>뉴스제목이 들어가는 곳입니다.</p>
+                                        <div class="cate">카테고리</div>
+                                    </div>
+                                    <img src="img/main/inc01/img06.jpg" alt="img06">
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="news_tit">
+                                        <div class="date">2024.07 <span>05</span> </div>
+                                        <p>뉴스제목이 들어가는 곳입니다.</p>
+                                        <div class="cate">카테고리</div>
+                                    </div>
+                                    <img src="img/main/inc01/img07.jpg" alt="img07">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="nav_container">
+                            <div class="prev_nav"><i data-feather="chevron-left"></i></div>
+                            <div class="next_nav"><i data-feather="chevron-right"></i></div>
+                        </div>
+                    </div>
+                    <script>
+                        var inc01_slide = new Swiper(".inc01_slide", {
+                            loop:true,
+                            speed:1200,
+                            slideActiveClass: 'on',
+                            effect: 'fade',
+                            fadeEffect: {
+                                crossFade: true 
+                            },
+                            navigation:{
+                                prevEl:".inc01_slide .prev_nav",
+                                nextEl:".inc01_slide .next_nav"
+                            }
+                        });
+
+                        var inc01_latest_slide = new Swiper(".inc01_news",{
+                            loop:true,
+                            speed:900,
+                            slidesPerView:'3.5',
+                            navigation:{
+                                prevEl:".inc01_latest .prev_nav",
+                                nextEl:".inc01_latest .next_nav"
+                            }
+                        })
+                    </script>
+                </section>
+            </section>
+            <!-- Section [e] -->
+        </div>
+    </main>
+</body>
+<script>
+    $(document).ready(function(){
+        const $body = document.querySelector('body');
+        function preventScroll(e) {
+            e.preventDefault();
+        }
+        // 'wheel' 이벤트를 사용하여 스크롤 감지 후 방지
+        $body.addEventListener('wheel', preventScroll, { passive: false });
+        setTimeout(()=>{
+            $body.removeEventListener('wheel', preventScroll, { passive: false });
+        }, 2800);
+        window.onload = function(){
+            setTimeout(()=>{
+                scrollTo(0, 0)
+            }, 100)
+        }
+    })
+    AOS.init();
+    feather.replace();
+</script>
+</html>

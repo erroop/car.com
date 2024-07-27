@@ -1,0 +1,50 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100..900&family=Outfit:wght@100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+/* ========================== 초기화 [s] */
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display:block}
+body{line-height:1;font-family:'Pretendard';font-size:0.81em}
+ol, ul, dl, dt, dd{list-style:none}
+blockquote, q{quotes:none}
+blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+table{border-collapse:collapse;border-spacing:0}
+input, button{margin:0;padding:0;font-family:'Noto Sans KR'}
+input[type="submit"]{cursor:pointer}
+button{cursor:pointer}
+textarea, select{font-family:'Noto Sans KR'}
+select{margin:0}
+a{color:#222;text-decoration:none}
+label, input, button, select, img{vertical-align:middle}
+*, :after, :before{box-sizing:border-box}
+*{-webkit-text-size-adjust:none}
+:root{--k-font:'Pretendard';--e-font:'Outfit';--primary:#3e68ff}
+[data-aos=fade-blur]{opacity:0;filter:blur(10px);transition-property:opacity, filter!important}
+[data-aos=fade-blur].aos-animate{opacity:1;filter:blur(0)}
+/* ========================== HEADER */
+#hd{position:relative;min-width:1500px; width:100%;z-index:999;font-family:var(--e-font), var(--k-font);}
+#hd #hd_bg{position:absolute;width: 100%;height: 0px;transition:all 0.3s; background-color: #fff;}
+#hd_wrapper{position: relative;display:flex;justify-content:space-between;align-items: center;padding: 0 100px; min-width:1500px;height:85px;}
+#hd_wrapper.on{border-bottom: 1px solid #e1e1e1;}
+
+/* 대분류 */
+#hd_wrapper .nav_container{display:flex;}
+#hd_wrapper .nav_list{position:relative;}
+#hd_wrapper .nav_list .link{display:block; padding: 0 35px;font-size:20px;line-height: 85px;color:#000}
+#hd_wrapper .nav_list.on .link{padding: 0 60px;}
+#hd_wrapper .nav_list:hover .hidden_nav::after{width: calc(100%);opacity: 1;}
+
+/* 소분류 */
+#hd_wrapper .hidden_nav{position: absolute;left:50%;transform: translateX(-50%);padding-top: 20px;min-width:100%; min-height: 125px;opacity:0;transition:all 0.3s;}
+#hd_wrapper .hidden_nav::after{opacity:0; position: absolute; top: -1.5px;left: 50%; transform: translateX(-50%);transition: all 0.2s; width: 100%; height: 3px; background-color: var(--primary); content: "";}
+#hd_wrapper .hidden_nav li a{display:block;width: 100%; font-size: 16px;font-weight:500; line-height: 2.2;text-align:center;transition:all 0.3s; color: #777;}
+#hd_wrapper .hidden_nav li a:hover{color: #000;}
+
+/* ========================== MAIN */
+#main_wrapper{position: relative;min-width:1500px;font-family:var(--e-font), var(--k-font);}
+
+/**/
+#section{position: relative;min-width: 1500px;line-height: 1.5;}
+#section .pl{white-space:pre-line;}
