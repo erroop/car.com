@@ -13,38 +13,75 @@
 #main_banner .pager .swiper-pagination-bullet-active{border-bottom:2px solid #e1e1e1}
 #main_banner .scroll_down{position:absolute;z-index:1;bottom:-10%;left:50%;transform:translateX(-50%);padding:10px;border-radius:50%;background-color:var(--primary)} 
 #main_banner .scroll_down .scroll img{animation:scroll_down 10s infinite linear}
-#main_banner .scroll_down:after{content:"";position:absolute;z-index:1;top:28%;left:50%;width:16px;height:23px;transform:translate(-50%, -50%);animation:scroll_icon 2.2s infinite linear;background:url(../img/main/down.png)}
+#main_banner .scroll_down:after{content:"";position:absolute;z-index:1;top:45%;left:50%;width:16px;height:23px;transform:translate(-50%, -50%);animation:scroll_icon 2.2s infinite linear;background:url(../img/main/down.png)}
 @keyframes scroll_down {0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)}}
-@keyframes scroll_icon {0%{top:28%;opacity:1} 50%{top:40%;opacity:0} 51%{top:28%;opacity:1} 100%{top:40%;opacity:0}}
+@keyframes scroll_icon {0%{top:45%;opacity:1} 50%{top:55%;opacity:0} 51%{top:45%;opacity:1} 100%{top:55%;opacity:0}}
 
 /* ========================== inc01 */
-#inc01{padding:140px 0;background-color:#212123}
+#inc01{position: relative;}
+#inc01 .bg{content: "";position: absolute;z-index: -1; bottom:0px;left: 0px;width:100%;height: 100%;background: url(../img/main/inc01/bg01.png)no-repeat left bottom;}
+#inc01 .inc01_wrap{position: relative;display:flex;gap:140px;margin: auto;padding:180px 0; width:75%;height:1253px}
+#inc01 .tit{display:flex;flex-direction: column;position:sticky;left:0;top:70px; width:calc(45% - 70px);height:484px;}
+#inc01 .tit .en{font-size:24px;font-weight:700;color:var(--primary);}
+#inc01 .tit p{font-size:52px;font-weight:700;color: #000;white-space:pre-line;line-height:1.3;}
+
+
+#inc01 .tit .swiper-pagination-bullet{width:auto !important;height:auto !important; background:none !important;opacity:1 !important;}
+#inc01 .tit .pager{display:flex;flex-direction: column;gap:15px;margin-top:100px;}
+#inc01 .tit .pager p{display:flex;justify-content: end; font-size:15px;}
+#inc01 .tit .pager span{display:flex;align-items: center;justify-content:space-between;padding:0 20px; border: 1px solid #e1e1e1;width:200px;height:42px;border-radius:21px;}
+#inc01 .tit .pager .on span{color: #fff; background-color: var(--primary);}
+#inc01 .tit .pager svg{width:20px;height:20px;}
+
+#inc01 .inc01_slide{width:calc(55% - 70px);}
+#inc01 .inc01_slide .cont ul{display:flex;flex-direction: column;}
+#inc01 .inc01_slide .cont ul li{padding:50px 34px 60px;border: 1px solid #e1e1e1;border-radius: 15px;background-position:center;background-size:cover;}
+#inc01 .inc01_slide .cont ul li+li{margin-top: 20px;}
+#inc01 .inc01_slide .cont.bg01 ul li:nth-child(1){background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../img/main/inc01/img01.jpg);}
+#inc01 .inc01_slide .cont.bg01 ul li:nth-child(2){background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../img/main/inc01/img02.jpg);}
+#inc01 .inc01_slide .cont.bg01 ul li:nth-child(3){background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../img/main/inc01/img03.jpg);}
+#inc01 .inc01_slide .cont.bg02 ul li:nth-child(1){background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../img/main/inc01/img03.jpg);}
+#inc01 .inc01_slide .cont.bg02 ul li:nth-child(2){background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../img/main/inc01/img02.jpg);}
+#inc01 .inc01_slide .cont.bg02 ul li:nth-child(3){background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../img/main/inc01/img01.jpg);}
+#inc01 .inc01_slide .cont.bg03 ul li:nth-child(1){background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../img/main/inc01/img02.jpg);}
+#inc01 .inc01_slide .cont.bg03 ul li:nth-child(2){background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../img/main/inc01/img01.jpg);}
+#inc01 .inc01_slide .cont.bg03 ul li:nth-child(3){background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../img/main/inc01/img03.jpg);}
+#inc01 .inc01_slide .cont.bg04 ul li:nth-child(1){background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../img/main/inc01/img03.jpg);}
+#inc01 .inc01_slide .cont.bg04 ul li:nth-child(2){background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../img/main/inc01/img02.jpg);}
+#inc01 .inc01_slide .cont.bg04 ul li:nth-child(3){background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../img/main/inc01/img01.jpg);}
+#inc01 .inc01_slide .cont ul li p{margin-bottom:8px; font-size:24px;font-weight:600;color: #fff;}
+#inc01 .inc01_slide .cont ul li span{font-size: 14px;font-weight:400;color: rgb(255 ,255, 255, 0.8);}
+#inc01 .inc01_slide .cont ul li .pl{margin-top:40px; font-size: 15px; font-weight: 500;color:rgb(255, 255, 255, 0.9);white-space:pre-line; }
+
+
+/* ========================== inc02 */
+#inc02{padding:220px 0;background-color:#212123}
 
 /* tit 공통 */
-#inc01 .tit{display:flex;flex-direction:column;justify-content:space-between;padding:48px;width:25%}
-#inc01 .tit .en{font-size:16px;font-weight:700}
-#inc01 .tit p{margin-top:15px;font-size:24px;font-weight:700}
-#inc01 .tit .pl{margin-top:30px;font-size:15px;font-weight:500}
-#inc01 .tit a{display:flex;align-items:center;width:50%;font-size:18px;font-weight:700;color:#fff}
+#inc02 .tit{display:flex;flex-direction:column;justify-content:space-between;padding:48px;width:25%}
+#inc02 .tit .en{font-size:16px;font-weight:700}
+#inc02 .tit p{margin-top:15px;font-size:24px;font-weight:700}
+#inc02 .tit .pl{margin-top:30px;font-size:15px;font-weight:500}
+#inc02 .tit a{display:flex;align-items:center;width:50%;font-size:18px;font-weight:700;color:#fff}
 
-/* inc01 main_slide */
-#inc01 .inc01_slide{position:relative;margin:auto;width:90%;height:370px}
-#inc01 .inc01_slide li{display:flex;width:100%}
-#inc01 .inc01_slide li .tit{color:#fff;background-color:var(--primary)}
-#inc01 .inc01_slide li img{width:75%;object-fit:cover}
-#inc01 .inc01_slide .nav_container{display:flex;gap:20px;position:absolute;z-index:1;bottom:45px;left:328px;cursor:pointer}
-#inc01 .inc01_slide .nav_container svg{color:#fff}
+/* inc02 main_slide */
+#inc02 .inc02_slide{position:relative;margin:auto;width:90%;height:370px}
+#inc02 .inc02_slide li{display:flex;width:100%}
+#inc02 .inc02_slide li .tit{color:#fff;background-color:var(--primary)}
+#inc02 .inc02_slide li img{width:75%;object-fit:cover}
+#inc02 .inc02_slide .nav_container{display:flex;gap:20px;position:absolute;z-index:1;bottom:45px;left:328px;cursor:pointer}
+#inc02 .inc02_slide .nav_container svg{color:#fff}
 
-/* inc01 latest_slide*/
-#inc01 .inc01_latest{display:flex;position:relative;margin:auto;width:90%;height:435px}
-#inc01 .inc01_latest .tit{background-color:#fff}
-#inc01 .inc01_latest .tit a{color:#000}
-#inc01 .inc01_news{width:75%}
-#inc01 .inc01_news li{height:100%;background-color:#f6f6f6}
-#inc01 .inc01_news li .news_tit{padding:25px;height:50%}
-#inc01 .inc01_news li .news_tit .date{display:flex;flex-direction:column;font-size:17px}
-#inc01 .inc01_news li .news_tit .date span{font-size:25px;font-weight:700}
-#inc01 .inc01_news li .news_tit p{margin-top:60px;font-size:18px;font-weight:700}
-#inc01 .inc01_news li .news_tit .cate{margin-top:10px;font-size:14px;font-weight:500}
-#inc01 .inc01_news li img{width:100%;height:50%;object-fit:cover}
-#inc01 .inc01_latest .nav_container{display:flex;gap:20px;position:absolute;z-index:1;bottom:45px;left:328px;cursor:pointer}
+/* inc02 latest_slide*/
+#inc02 .inc02_latest{display:flex;position:relative;margin:auto;width:90%;height:435px}
+#inc02 .inc02_latest .tit{background-color:#fff}
+#inc02 .inc02_latest .tit a{color:#000}
+#inc02 .inc02_news{width:75%}
+#inc02 .inc02_news li{height:100%;background-color:#f6f6f6}
+#inc02 .inc02_news li .news_tit{padding:25px;height:50%}
+#inc02 .inc02_news li .news_tit .date{display:flex;flex-direction:column;font-size:17px}
+#inc02 .inc02_news li .news_tit .date span{font-size:25px;font-weight:700}
+#inc02 .inc02_news li .news_tit p{margin-top:60px;font-size:18px;font-weight:700}
+#inc02 .inc02_news li .news_tit .cate{margin-top:10px;font-size:14px;font-weight:500}
+#inc02 .inc02_news li img{width:100%;height:50%;object-fit:cover}
+#inc02 .inc02_latest .nav_container{display:flex;gap:20px;position:absolute;z-index:1;bottom:45px;left:328px;cursor:pointer}
