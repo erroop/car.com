@@ -20,8 +20,6 @@
     <script src="js/topmenu.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/main.css">
@@ -31,49 +29,56 @@
 <body>
     <header>
         <div id="hd" data-aos="fade-down"data-aos-duration="1000">
-            <div id="hd_bg"></div>
             <div id="hd_wrapper">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="img/common/logo_m.png" alt="logo">
+                        <img src="img/common/logo.png" alt="logo">
                     </a>
                 </div>
                 <nav class="nav_wrapper">
                     <ul class="nav_container">
                         <li class="nav_list">
                             <a class="link" href="sub.html">Company</a>
-                            <ul class="hidden_nav">
-                                <li><a href="sub.html">회사소개</a></li>
-                                <li><a href="">소분류</a></li>
-                                <li><a href="">소분류</a></li>
-                            </ul>
                         </li>
                         <li class="nav_list">
                             <a class="link" href="">Business</a>
-                            <ul class="hidden_nav">
-                                <li><a href="">소분류</a></li>
-                                <li><a href="">소분류</a></li>
-                                <li><a href="">소분류</a></li>
-                            </ul>
                         </li>
                         <li class="nav_list">
                             <a class="link" href="">Product</a>
-                            <ul class="hidden_nav">
-                                <li><a href="">소분류</a></li>
-                                <li><a href="">소분류</a></li>
-                                <li><a href="">소분류</a></li>
-                            </ul>
                         </li>
                         <li class="nav_list">
                             <a class="link" href="">Community</a>
-                            <ul class="hidden_nav">
-                                <li><a href="">소분류</a></li>
-                                <li><a href="">소분류</a></li>
-                                <li><a href="">소분류</a></li>
-                            </ul>
                         </li>
                     </ul>
                 </nav>
+            </div>
+            <div id="topmenuM">
+                <h1 id="m_logo">
+                    <a href="/">
+                        <img src="img/common/logo.png" alt="sa"></a>
+                    </h1>
+                <!-- 메뉴 버튼 -->
+                <div id="m_navBtn"><span></span></div>
+                <!-- 오픈 메뉴 -->
+                <div id="navWrap">
+                    <div class="inner">     
+                        <ul class="m_lnb">
+                            <li>
+                                <a href="sub.html" class="m_bmenu">Company<i data-feather="chevron-right"></i></a>
+                            </li>
+                            <li>
+                                <a href="sub.html" class="m_bmenu">Business<i data-feather="chevron-right"></i></a>
+                            </li>
+                            <li>
+                                <a href="sub.html" class="m_bmenu">Product<i data-feather="chevron-right"></i></a>
+                            </li>
+                            <li>
+                                <a href="sub.html" class="m_bmenu">Community<i data-feather="chevron-right"></i></a>
+                            </li>
+                        </ul>   
+                        <p class="mo_hd_copy">ⓒ 샘플 - 기업 홈페이지 샘플</p>         
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -81,8 +86,8 @@
         <div id="main_wrapper">
             <!-- MainVisual [s] -->
             <div id="main_banner">
-                <div class="tit" data-aos="fade-blur" data-aos-duration="1600"  data-aos-delay="600">Tow, that new beginning</div>
-                <div class="swiper-container main_slide" data-aos="fade-up" data-aos-duration="800"  data-aos-delay="1200">
+                <div class="tit" data-aos="fade-blur" data-aos-duration="1400" data-aos-delay="800">Tow, that new beginning</div>
+                <div class="swiper-container main_slide" data-aos="fade-blur" data-aos-duration="1000"  data-aos-delay="600">
                     <ul class="swiper-wrapper">
                         <li class="swiper-slide">
                             <img src="img/main/main_banner_01.jpg" alt="">
@@ -96,7 +101,7 @@
                     </ul>
                     <div class="pager"></div>
                 </div>
-                <div class="scroll_down">
+                <div class="scroll_down"  data-aos="fade-up" data-aos-duration="400">
                     <span class="scroll"><img src="img/main/scroll_down.png" alt="scroll_down_rotate"></span>
                 </div>
             </div>
@@ -115,56 +120,27 @@
                                 return '<span class="' + className + '">' + (index + 1) + "</span>";
                             },
                         },
-                    });
-                    gsap.registerPlugin(ScrollTrigger);
-                    setTimeout(()=>{
-                        gsap.to("#main_banner .swiper-slide img", {
-                        scrollTrigger:{
-                            pin:true,
-                            trigger:"#main_banner",
-                            start: "top top",
-                            end: "+=900",
-                            scrub: 1
+                        autoplay : { 
+                            delay : 3200,
+                            disableOnInteraction : false,
                         },
-                        width:'100%',
-                        borderRadius:'0px'
-                    })
-                    gsap.to("#main_banner .main_slide", {
-                        scrollTrigger:{
-                            trigger:"#main_banner",
-                            start: "top top",
-                            end: "+=900",
-                            scrub: 1,
-                        },
-                        top:'0%'
                     });
-                    gsap.to("#main_banner .tit", {
-                        scrollTrigger:{
-                            trigger:"#main_banner",
-                            start: "top top",
-                            end: "+=900",
-                            scrub: 1,
-                        },
-                        top:'50%',
-                        transform:'translate(-50%, -50%)',
-                        color:'#fff'
-                    });
-                    }, 3000)
                 })
             </script>
             <!-- MainVisual [e] -->
             <!-- Section [s] -->
             <section id="section">
+                <!-- inc01 [s] -->
                 <section id="inc01">
-                    <div class="bg" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1300" data-aos-anchor-placement="bottom-bottom"></div>
+                    <div class="bg" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="1300"></div>
                     <div class="inc01_wrap">
-                        <div class="tit" data-aos="fade-up" data-aos-delay="700" data-aos-duration="1300" data-aos-anchor-placement="bottom-bottom">
+                        <div class="tit" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
                             <div class="en">영문제목이 들어가는 곳입니다.</div>
                             <p>화면에 2줄 이상의 제목이 
                                 들어가는 곳입니다.</p>
                             <div class="pager"></div>
                         </div>
-                        <div class="swiper-container inc01_slide" data-aos="fade-left" data-aos-delay="700" data-aos-duration="1300" data-aos-anchor-placement="bottom-bottom">
+                        <div class="swiper-container inc01_slide" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="600">
                             <ul class="swiper-wrapper">
                                 <li class="swiper-slide cont bg01">
                                     <ul>
@@ -288,8 +264,10 @@
                         </script>
                     </div>
                 </section>
+                <!-- inc01 [e] -->
+                <!-- inc02 [s] -->
                 <section id="inc02">
-                    <div class="swiper-container inc02_slide" data-aos="fade-down" data-aos-delay="1500" data-aos-duration="1100" data-aos-anchor-placement="bottom-bottom">
+                    <div class="swiper-container inc02_slide" data-aos="fade-down" data-aos-duration="1000">
                         <ul class="swiper-wrapper">
                             <li class="swiper-slide">
                                 <div class="tit">
@@ -299,7 +277,6 @@
                                         <div class="pl">해당 슬라이드에 맞는 내용,
                                             및 설명이 들어가는 곳입니다.</div>
                                     </div>
-                                    <a href="index.html">더보기 <i data-feather="chevron-right"></i></a>
                                 </div>
                                 <img src="img/main/inc02/img01.jpg" alt="img01">
                             </li>
@@ -311,7 +288,6 @@
                                         <div class="pl">해당 슬라이드에 맞는 내용,
                                             및 설명이 들어가는 곳입니다.</div>
                                     </div>
-                                    <a href="index.html">더보기 <i data-feather="chevron-right"></i></a>
                                 </div>
                                 <img src="img/main/inc02/img02.jpg" alt="img02">
                             </li>
@@ -323,7 +299,6 @@
                                         <div class="pl">해당 슬라이드에 맞는 내용,
                                             및 설명이 들어가는 곳입니다.</div>
                                     </div>
-                                    <a href="index.html">더보기 <i data-feather="chevron-right"></i></a>
                                 </div>
                                 <img src="img/main/inc02/img03.jpg" alt="img03">
                             </li>
@@ -334,16 +309,20 @@
                         </div>
                     </div>
                     <div class="inc02_latest">
-                        <div class="tit" data-aos="fade-right" data-aos-delay="1300" data-aos-duration="900" data-aos-anchor-placement="bottom-bottom">
+                        <div class="tit"  data-aos="fade-right" data-aos-duration="1000">
                             <div>
                                 <div class="en">영문제목이 들어가는 곳입니다.</div>
                                 <p>제목이 들어가는 곳입니다</p>
                                 <div class="pl">해당 슬라이드에 맞는 내용,
                                     및 설명이 들어가는 곳입니다.</div>
+                                <div class="nav_container">
+                                    <div class="prev_nav"><i data-feather="chevron-left"></i></div>
+                                    <div class="next_nav"><i data-feather="chevron-right"></i></div>
+                                </div>
                             </div>
                             <a href="index.html">더보기 <i data-feather="chevron-right"></i></a>
                         </div>
-                        <div class="swiper-container inc02_news" data-aos="fade-left" data-aos-delay="1300" data-aos-duration="900" data-aos-anchor-placement="bottom-bottom">
+                        <div class="swiper-container inc02_news" data-aos="fade-left" data-aos-duration="1000">
                             <ul class="swiper-wrapper">
                                 <li class="swiper-slide">
                                     <div class="news_tit">
@@ -379,10 +358,6 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="nav_container">
-                            <div class="prev_nav"><i data-feather="chevron-left"></i></div>
-                            <div class="next_nav"><i data-feather="chevron-right"></i></div>
-                        </div>
                     </div>
                     <script>
                         var inc02_slide = new Swiper(".inc02_slide", {
@@ -393,54 +368,216 @@
                             fadeEffect: {
                                 crossFade: true 
                             },
-                            autoplay : { 
-                                delay : 3000,
-                                disableOnInteraction : false,
-                            },
+                            // autoplay : { 
+                            //     delay : 3200,
+                            //     disableOnInteraction : false,
+                            // },
                             navigation:{
                                 prevEl:".inc02_slide .prev_nav",
                                 nextEl:".inc02_slide .next_nav"
-                            }
+                            },
                         });
 
                         var inc02_latest_slide = new Swiper(".inc02_news",{
                             loop:true,
                             speed:900,
-                            slidesPerView:'3.5',
+                            slidesPerView:'1.3',
+                            centeredSlides: true,
                             navigation:{
                                 prevEl:".inc02_latest .prev_nav",
                                 nextEl:".inc02_latest .next_nav"
+                            },
+                            // autoplay : { 
+                            //     delay : 3200,
+                            //     disableOnInteraction : false,
+                            // },
+                            breakpoints:{
+                                1381:{
+                                    slidesPerView:'3.5',
+                                    centeredSlides: false,
+                                },
+                                1025:{
+                                    slidesPerView:'2.5',
+                                    centeredSlides: false,
+                                },
+                                769:{
+                                    slidesPerView:'2.2',
+                                    centeredSlides: false,
+                                },
+                                481:{
+                                    slidesPerView:'2',
+                                    centeredSlides: false,
+                                },
+                                381:{
+                                    slidesPerView:'1.5',
+                                    centeredSlides: true,
+                                }
+                            }
+                        })
+                    </script>
+                </section>
+                 <!-- inc02 [s] -->
+                 <!-- inc03 [s] -->
+                <section id="inc03">
+                    <div class="inc03_wrapper">
+                        <div class="tit">
+                            <div class="link" data-aos="fade-down" data-aos-duration="1000">
+                                <div class="pl">영문제목이
+                                    들어가는 곳 입니다</div>
+                                <a href=""></a>
+                            </div>
+                            <div class="tit_container" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="main_tit">WE MAKE CUSTOOMERS'
+                                    VISION A REALITY <i data-feather="arrow-right"></i></div>
+                                <div class="pl">3줄 정도의 회사를 소개시켜주는 문구를 넣어주는 것이 좋습니다.
+                                    3줄 정도의 회사를 소개시켜주는 문구를 넣어주는 것이 좋습니다.
+                                    3줄 정도의 회사를 소개시켜주는 문구를 넣어주는 것이 좋습니다.</div>
+                            </div>
+                        </div>
+                        <div class="bg_img" data-aos="fade-left" data-aos-duration="1000">
+                            <img src="img/main/inc03/img01.jpg" alt="img01">
+                        </div>
+                    </div>
+                </section>
+                 <!-- inc03 [e] -->
+                 <!-- inc04 [s] -->
+                <section id="inc04">
+                    <div class="inc04_wrapper">
+                        <div class="bg"></div>
+                        <div class="tit" data-aos="fade-down" data-aos-duration="1000">
+                            <div class="en">영문제목</div>
+                            <div class="pl">위치서비스를 중심으로한 텍스트가 들어가면 좋을 것 같습니다.</div>
+                            <span>해당 제목을 설명해주는 곳 입니다.</span>
+                        </div>  
+                        <div class="cont">
+                            <ul>
+                                <li data-aos="fade-up" data-aos-duration="1000">
+                                    <img src="img/main/inc04/icon01.png" alt="icon01">
+                                    <div class="en_pl">영문제목이 들어가는 곳입니다.</div>
+                                    <div class="ko_pl">한글제목이 들어가는 곳입니다.</div>
+                                </li>
+                                <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                                    <img src="img/main/inc04/icon02.png" alt="icon02">
+                                    <div class="en_pl">영문제목이 들어가는 곳입니다.</div>
+                                    <div class="ko_pl">한글제목이 들어가는 곳입니다.</div>
+                                </li>
+                                <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                                    <img src="img/main/inc04/icon03.png" alt="icon03">
+                                    <div class="en_pl">영문제목이 들어가는 곳입니다.</div>
+                                    <div class="ko_pl">한글제목이 들어가는 곳입니다.</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                 <!-- inc04 [e] -->
+                 <!-- inc05 [s] -->
+                  <section id="inc05">
+                    <div class="inc05_wrapper">
+                        <div class="tit" data-aos="fade-down" data-aos-duration="1000">
+                            <div class="en">Latest News</div>
+                            <div class="pl">메인제목이 들어가는 곳입니다.</div>
+                        </div>
+                        <div class="swiper-container inc05" data-aos="fade-up" data-aos-duration="1000">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <img src="img/main/inc05/img01.jpg" alt="img01">
+                                    <div class="tit_wrapper">
+                                        <div class="title">해당뉴스의 제목이 들어가는 곳입니다.</div>
+                                        <div class="pl">해당뉴스의 설명이 들어가는 곳입니다.</div>
+                                        <div class="date">2024.08.11</div>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="img/main/inc05/img02.jpg" alt="img02">
+                                    <div class="tit_wrapper">
+                                        <div class="title">해당뉴스의 제목이 들어가는 곳입니다.</div>
+                                        <div class="pl">해당뉴스의 설명이 들어가는 곳입니다.</div>
+                                        <div class="date">2024.08.11</div>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="img/main/inc05/img03.jpg" alt="img03">
+                                    <div class="tit_wrapper">
+                                        <div class="title">해당뉴스의 제목이 들어가는 곳입니다.</div>
+                                        <div class="pl">해당뉴스의 설명이 들어가는 곳입니다.</div>
+                                        <div class="date">2024.08.11</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="nav_container" data-aos="fade-blur" data-aos-duration="1000">
+                            <div class="swiper-button-prev prev_nav"></div>
+                            <div class="swiper-button-next next_nav"></div>
+                        </div>
+                    </div>
+                    <script>
+                        var inc05_slide = new Swiper(".inc05", {
+                            loop:true,
+                            speed:1200,
+                            slidesPerView: '1.3',
+                            spaceBetween: 9,
+                            centeredSlides: true,
+                            navigation:{
+                                prevEl:".prev_nav",
+                                nextEl:".next_nav",
+                                clickable:true,
                             },
                             autoplay : { 
                                 delay : 3000,
                                 disableOnInteraction : false,
                             },
+                            breakpoints:{
+                                1025:{
+                                    slidesPerView: '3',
+                                    spaceBetween: 30,
+                                    centeredSlides: true,
+                                },
+                                769:{
+                                    slidesPerView: '3',
+                                    spaceBetween: 15,
+                                    centeredSlides: true,
+                                },
+                                481:{
+                                    slidesPerView: '2',
+                                    spaceBetween: 15,
+                                    centeredSlides: true,
+                                },
+                                381:{
+                                    slidesPerView: '1.5',
+                                    spaceBetween: 12,
+                                    centeredSlides: true,
+                                }
+                            }
                         })
                     </script>
-                </section>
+                  </section>
+                 <!-- inc05 [e] -->
             </section>
             <!-- Section [e] -->
         </div>
     </main>
+    <footer>
+        <div class="footer_wrapper">
+            <div class="ft_txt">
+                <img src="img/common/logo.png" alt="sample">
+                <ul class="ft_menu">
+                    <li><a href="">Company</a></li>
+                    <li><a href="">Business</a></li>
+                    <li><a href="">Product</a></li>
+                    <li><a href="">Community</a></li>
+                </ul>
+                <p>고객사 주소,<br>
+                사업자번호,<br>
+                전화번호 등 주요 정보가 들어가는 곳입니다.</p>
+            </div>
+            <div class="ft_adm">
+                <p class="copy">ⓒCopyright SAMPLE - All Rights Reserved. </p>
+            </div>
+        </div>
+    </footer>
 </body>
 <script>
-    $(document).ready(function(){
-        const $body = document.querySelector('body');
-        function preventScroll(e) {
-            e.preventDefault();
-        }
-        // 'wheel' 이벤트를 사용하여 스크롤 감지 후 방지
-        $body.addEventListener('wheel', preventScroll, { passive: false });
-        setTimeout(()=>{
-            $body.removeEventListener('wheel', preventScroll, { passive: false });
-        }, 2800);
-        window.onload = function(){
-            setTimeout(()=>{
-                scrollTo(0, 0)
-            }, 100)
-        }
-
-    })
     AOS.init();
     feather.replace();
 </script>
