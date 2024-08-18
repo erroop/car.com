@@ -232,8 +232,10 @@
 #inc02 .tit p{margin-top:8px;font-size:19px}
 #inc02 .tit .pl{margin-top:15px;font-size:14px}
 #inc02 .tit a{font-size:15px}
+#inc02 .inc02_latest .tit a{gap:4px}
+#inc02 .inc02_latest .tit a svg{width:18px;height:18px}
 #inc02 .inc02_slide li img{height:270px}
-#inc02 .inc02_slide .nav_container{display:none}
+#inc02 .inc02_slide .nav_container{bottom:15px;right:15px}
 #inc02 .inc02_latest{margin-top:40px}
 #inc02 .inc02_latest .tit{gap:20px}
 #inc02 .inc02_news li img{height:165px}
@@ -248,6 +250,10 @@
 #inc02 .tit p{margin-top:6px;font-size:17px}
 #inc02 .tit .pl{margin-top:12px;font-size:13px}
 #inc02 .tit a{font-size:13px}
+#inc02 .inc02_latest .tit a{gap:2px}
+#inc02 .inc02_latest .tit a svg{width:16px;height:16px}
+#inc02 .inc02_slide li img{height:240px}
+#inc02 .inc02_slide .nav_container{bottom:10px;right:10px}
 #inc02 .inc02_latest{margin-top:30px}
 #inc02 .inc02_latest .tit{padding:35px 8px 25px}
 #inc02 .inc02_news li img{height:150px}
@@ -314,20 +320,22 @@
 #inc03{padding:60px 0}
 #inc03 .inc03_wrapper{padding:30px 0 70px;height:665px}
 #inc03 .inc03_wrapper .link .pl{font-size:16px}
+#inc03 .inc03_wrapper .tit{width:90%}
 #inc03 .inc03_wrapper .tit_container .main_tit{font-size:28px}
 #inc03 .inc03_wrapper .tit_container .pl{margin-top:25px;font-size:13px}
 #inc03 .inc03_wrapper .link a{width:16px;height:16px;margin-top:0px}
 #inc03 .inc03_wrapper .link a:after{width:186x}
 #inc03 .inc03_wrapper .link a:before{height:16px}
-#inc03 .inc03_wrapper .bg_img{top:110px}
+#inc03 .inc03_wrapper .bg_img{top:110px;width:90%}
 #inc03 .inc03_wrapper .bg_img img{height:285px}
 }
 @media (max-width:380px){
 #inc03{padding:50px 0}
 #inc03 .inc03_wrapper{padding:30px 0 50px;height:550px}
 #inc03 .inc03_wrapper .link .pl{font-size:15px}
-#inc03 .inc03_wrapper .bg_img{top:100px}
+#inc03 .inc03_wrapper .bg_img{top:100px;width:93%}
 #inc03 .inc03_wrapper .bg_img img{height:240px}
+#inc03 .inc03_wrapper .tit{width:93%}
 #inc03 .inc03_wrapper .tit_container .main_tit{font-size:22px}
 #inc03 .inc03_wrapper .tit_container .main_tit svg{width:18px;height:16px}
 #inc03 .inc03_wrapper .tit_container .pl{margin-top:20px;font-size:12px}
